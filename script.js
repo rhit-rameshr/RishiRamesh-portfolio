@@ -1,6 +1,4 @@
-$(".hamburger").click(function(){
-   $(".wrapper").toggleClass("collapse");
-});
+
 
 function showPopup(bool) {
   if (bool) {
