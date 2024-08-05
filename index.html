@@ -1,122 +1,116 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Rishi Ramesh - Portfolio</title>
-    <link rel="stylesheet" href="./style.css"/>
-    <script src="./script.js"></script>
-  </head>
-  <body>
-    <!-- Navigation Bar -->
-    <nav>
-      <div class="profile_name">
-        Rishi Ramesh
-        <div class="contact_info">
-          <img src="html_finalprojimages/envelope.png" alt="Envelope Icon"/>
-          rishvanth.ramesh1@gmail.com
-        </div>
-        <div class="contact_info">
-          <img src="html_finalprojimages/phone.png" alt="Phone Icon"/>
-          +9257255849
-        </div>
-      </div>
-      <div class="topdiv">
-        <a class="topmenu" href="#about-me">About Me</a>
-        <a class="topmenu" href="#skills">Skills</a>
-        <div class="dropdown">
-          <a class="topmenu" href="#projects">Projects</a>
-          <div class="dropdown-content">
-            <a href="#project1">Jetpack Joyride</a>
-            <a href="#project2">Asset Inventory</a>
-            <a href="#project3">Database Server</a>
-          </div>
-        </div>
-      </div>
-    </nav>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- About Me -->
-    <section id="about-me" class="container">
-      <div>
-        <img src="html_finalprojimages/headshot.jpg" class="profile_image"/>
-      </div>
-      <div>
-        <h1>
-          Hi, I'm Rishi Ramesh! <img src="html_finalprojimages/waving-hand.png" width="60px"/>
-        </h1>
-        <p>
-          I am a software engineer with 2 years of experience in Python, Java, C, and ARM Assembly.
-        </p>
-      </div>
-    </section>
+    <!-- Include jQuery library if needed -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+</head>
+<body>
+    <header class="header-background">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-content">
+            <img src="html_finalprojimages\logo.png" alt="Profile Photo of Rishi">
+            <h1>Hi, my name is Rishi Ramesh! </h1>
+            <p>Software Developer | Computer Science Student | Tech Enthusiast</p>
+        </div>
+    </header>
+    <main>
+        <section id="about">
+            <h2>~ About Me ~</h2>
+            <img src="html_finalprojimages\headshot.jpg" alt="Rishi's Profile" class="profile-photo">
+            <p>
+                I am Rishi Ramesh, a passionate software developer with a robust foundation in various programming languages and technologies. With 2 years of Python expertise and 1 year each of Java, C, and ARM assembly, I've honed my skills across multiple facets of software engineering. My keen interest in artificial intelligence drives my continuous exploration of cutting-edge AI technologies, including Large Language Models (LLMs) and Generative Adversarial Networks (GANs). My diverse skill set and enthusiasm for innovation make me a dynamic force in the tech world, ready to tackle complex challenges and contribute to the future of AI.
+            </p>
+        </section>
+        <section id="portfolio">
+            <html>
 
-    <!-- Skills -->
-    <section id="skills">
-      <h2>Skills</h2>
-      <div style="clear:both;"></div>
-      <div class="all_skills">
-        <div class="skill">
-          <img src="html_finalprojimages/html5.png"/>
-          <h6>HTML</h6>
-          <p>1 year experience</p>
-        </div>
-        <div class="skill">
-          <img src="html_finalprojimages/js.jpeg"/>
-          <h6>JavaScript</h6>
-          <p>1 year experience</p>
-        </div>
-        <div class="skill">
-          <img src="html_finalprojimages/java.png"/>
-          <h6>Java</h6>
-          <p>1 years experience</p>
-        </div>
-        <div class="skill">
-          <img src="html_finalprojimages/c.png"/>
-          <h6>C</h6>
-          <p>1 year experience</p>
-        </div>
-        <div class="skill">
-          <img src="html_finalprojimages/python.png"/>
-          <h6>Python</h6>
-          <p>2 years experience</p>
-        </div>
-      </div>
-    </section>
+<head>
+	<title>HTML and CSS Slideshow</title>
+</head>
 
-    <!-- Projects -->
-    <section class="projects" id="projects">
-      <h2>Projects</h2>
-      <div style="clear:both;"></div>
-      <div id="projects-container" class="projects-container">
-        <div id="project1" class="project-card">
-          <h3>Jetpack Joyride</h3>
-          <ul>
-            <li>Developed an interactive Jetpack Joyride-esque game using Java</li>
-          </ul>
-        </div>
-        <hr>
-        <div id="project2" class="project-card">
-          <h3>Asset Inventory</h3>
-          <ul>
-            <li>Developed and deployed an asset inventory using IP and MAC addresses to keep track of connected devices to home network</li>
-          </ul>
-        </div>
-        <hr>
-        <div id="project3" class="project-card">
-          <h3>Database Server</h3>
-          <ul>
-            <li>Created a database server using socket in C to connect to another client and send/receive messages</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-    <div style="clear:both;"></div>
+<body>
 
-    <div class="iconbutton">
-      <a href="#home">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" width="63px">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M15 11.25l-3-3m0 0l-3 3m3-3v7.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-        </svg>
-      </a>
-    </div>
+	<!-- Define the slideshow container -->
+	<div id="slideshow">
+		<div class="slide-wrapper">
 
-    <div class="popup" id="popup" class="flex_center">
-      <img src="html_finalprojimages/checkmark
+			<!-- Define each of the slides
+		and write the content -->
+
+			<div class="slide">
+				<h1 class="slide-number">
+					Collaborated with peers to develop a Java-based Jetpack Joyride game, showcasing my skills in custom sound effects creation and dynamic animations.
+				</h1>
+			</div>
+			<div class="slide">
+				<h1 class="slide-number">
+                    Skillfully leveraging Python programming and deep cybersecurity expertise, I meticulously designed an advanced ARP packet sniffer. This powerful tool enabled me to meticulously capture and analyze Address Resolution Protocol (ARP) packets on the network, facilitating the creation of a detailed inventory of connected devices.
+				</h1>
+			</div>
+			<div class="slide">
+				<h1 class="slide-number">
+					Engineered a sophisticated database server using C sockets to establish seamless client connections, facilitating bi-directional message exchange.
+				</h1>
+			</div>
+		</div>
+	</div>
+</body>
+
+</html>
+
+        <section id="contact">
+            <h2>~ Keep in Touch ~</h2>
+            <!-- Button to send a message -->
+            <button class="btn btn-default td-btn outline white" id="send-message-btn">Send me a message!</button>
+        </section>
+    </main>
+    <footer>
+        <p>Copyright © 2023 Rishi Ramesh — All Rights Reserved</p>
+    </footer>
+
+    <!-- Include jQuery and JavaScript for handling the button click -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#send-message-btn').click(function() {
+                // Open a prompt to collect user's message
+                var message = prompt('Please enter your message:');
+
+                // Check if the user entered a message
+                if (message) {
+                    // Use Formspree to send email (replace with your Formspree endpoint)
+                    var formUrl = 'https://formspree.io/f/mwpepvor';
+                    var data = {
+                        message: message
+                    };
+
+                    $.ajax({
+                        type: 'POST',
+                        url: formUrl,
+                        data: data,
+                        dataType: 'json'
+                    })
+                    .done(function(response) {
+                        alert('Message sent successfully!');
+                    })
+                    .fail(function(error) {
+                        alert('Oops! Something went wrong. Please try again later.');
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
