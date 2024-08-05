@@ -1,106 +1,242 @@
-body {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+:root {
+    --primary-color: #007acc; /* Blue */
+    --text-color: #1e3a8a; /* Dark Blue */
+    --background-light: #e0f2fe; /* Light Blue */
+    --header-height: 100vh;
 }
 
-/* Navigation Bar */
-nav {
-  background-color: #003366; /* Dark blue */
-  padding: 1cm;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+*, *::before, *::after {
+    box-sizing: border-box;
 }
 
-nav .profile_name {
-  color: white;
-  font-size: 24px;
-}
-
-nav .contact_info {
-  display: none;
-}
-
-nav .topdiv {
-  display: flex;
-  gap: 20px;
-}
-
-nav .topmenu {
-  color: lightgray;
-  font-size: 20px;
-  text-decoration: none;
-  position: relative;
-}
-
-nav .topmenu:hover {
-  color: white;
-  font-weight: bolder;
-  text-decoration: underline;
-}
-
-nav .topmenu::after {
-  content: "";
-  display: block;
-  width: 0;
-  height: 2px;
-  background: white;
-  transition: width .3s;
-}
-
-nav .topmenu:hover::after {
-  width: 100%;
-}
-
-nav .dropdown {
-  position: relative;
-}
-
-nav .dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #003366;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-nav .dropdown-content a {
-  color: lightgray;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-nav .dropdown-content a:hover {
-  background-color: #0059b3;
-}
-
-nav .dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  nav {
-    flex-direction: column;
-  }
-
-  nav .topdiv {
-    flex-direction: column;
-  }
-
-  nav .profile_name {
-    text-align: center;
-  }
-}
-
-/* Smooth Scroll */
 html {
-  scroll-behavior: smooth;
+    font-size: 110%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'JetBrains Mono', 'Work Sans', Helvetica, sans-serif;
+    color: var(--text-color);
+    line-height: 1.5;
+    background-color: var(--background-light);
+    overflow-x: hidden;
+}
+
+.header-background {
+    background: linear-gradient(rgba(224, 242, 254, 0.7), rgba(224, 242, 254, 0.9)),
+                url("https://i.imgur.com/TAn6FWz.jpg") center center fixed;
+    background-size: cover;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgba(0, 122, 204, 0.5); /* Semi-transparent blue */
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', 'Unica One', cursive;
+    font-size: 1.2rem;
+}
+
+.header-content img {
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+.header-content h1, .header-content p {
+    margin: 0.5rem 0;
+    font-family: 'JetBrains Mono', 'Unica One', cursive;
+}
+
+#about {
+    background-color: var(--background-light);
+    padding-left: 40px;
+    padding-right: 40px;
+    margin: 40px;
+    border-radius: 0.5%;
+    text-align: center;
+}
+
+#about h2, #contact h2 {
+    color: white; /* Changed header text color to white */
+}
+
+.profile-photo {
+    max-width: 40%;
+    height: auto;
+    border-radius: 50%;
+}
+
+#portfolio {
+    background-color: #3b82f6; /* Mid Blue */
+    padding: 15px;
+    border-radius: 0.5%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+body {
+	font-family: Helvetica, sans-serif;
+	padding: 5%;
+	text-align: center;
+	font-size: 50;
+}
+
+/* Styling the area of the slides */
+#slideshow {
+	overflow: hidden;
+	height: 510px;
+	width: 728px;
+	margin: 0 auto;
+}
+
+/* Style each of the sides 
+with a fixed width and height */
+.slide {
+	float: left;
+	height: 510px;
+	width: 728px;
+}
+
+/* Add animation to the slides */
+.slide-wrapper {
+
+	/* Calculate the total width on the
+	basis of number of slides */
+	width: calc(728px * 4);
+
+	/* Specify the animation with the
+	duration and speed */
+	animation: slide 15s ease infinite;
+}
+
+/* Set the background color
+of each of the slides */
+.slide:nth-child(1) {
+	background: green;
+}
+
+.slide:nth-child(2) {
+	background: pink;
+}
+
+.slide:nth-child(3) {
+	background: red;
+}
+
+/* Define the animation 
+for the slideshow */
+@keyframes slide {
+
+	/* Calculate the margin-left for 
+	each of the slides */
+	20% {
+		margin-left: 0px;
+	}
+
+	40% {
+		margin-left: calc(-728px * 1);
+	}
+
+	60% {
+		margin-left: calc(-728px * 2);
+	}
+
+}
+
+
+#portfolio h2 {
+    color: white; /* Changed header text color to white */
+}
+
+.project {
+    width: 200px;
+    height: auto;
+    border: 1px solid #60a5fa; /* Light Blue */
+    margin: 10px;
+    display: inline-block;
+    padding: 10px;
+    vertical-align: top;
+    text-align: center; /* Centering content */
+}
+
+.project img {
+    max-width: 100%; /* Ensures image doesn't exceed container width */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+
+#contact {
+    background-color: #1e40af; /* Dark Blue */
+    padding: 15px;
+    border-radius: 0.5%;
+    text-align: center;
+    color: white;
+}
+
+.td-btn {
+    padding: 12px 36px;
+    text-transform: uppercase;
+    transition: background-color 0.2s ease-in-out;
+    background-color: #3b82f6; /* Mid Blue */
+    color: white;
+}
+
+footer {
+    background-color: #e0f2fe; /* Light Blue */
+    text-align: center;
+    padding: 10px;
+}
+
+/* Additional Styles */
+h2 {
+    font-family: 'JetBrains Mono', 'Unica One', cursive;
+    font-size: 2.3rem;
+}
+
+a {
+    color: var(--primary-color);
+    transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+    color: #005bb5; /* Darker Blue */
+}
+
+@media (max-width: 768px) {
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .profile-photo {
+        width: 50%;
+        margin: 0 auto;
+    }
 }
