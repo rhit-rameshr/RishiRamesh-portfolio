@@ -6,70 +6,33 @@
     <title>Personal Portfolio</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
-
     <!-- Include jQuery library if needed -->
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
     <header class="header-background">
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="https://github.com/rhit-rameshr" target="_blank">Portfolio</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
         <div class="header-content">
-            <img src="html_finalprojimages\logo.png" alt="Profile Photo of Rishi">
-            <h1>Hi, my name is Rishi Ramesh! </h1>
+            <img src="html_finalprojimages/logo.png" alt="Profile Photo of Rishi">
+            <h1>Hi, my name is Rishi Ramesh!</h1>
             <p>Software Developer | Computer Science Student | Tech Enthusiast</p>
         </div>
     </header>
+    <!-- Rest of the code remains the same -->
     <main>
         <section id="about">
             <h2>~ About Me ~</h2>
-            <img src="html_finalprojimages\headshot.jpg" alt="Rishi's Profile" class="profile-photo">
+            <img src="html_finalprojimages/headshot.jpg" alt="Rishi's Profile" class="profile-photo">
             <p>
                 I am Rishi Ramesh, a passionate software developer with a robust foundation in various programming languages and technologies. With 2 years of Python expertise and 1 year each of Java, C, and ARM assembly, I've honed my skills across multiple facets of software engineering. My keen interest in artificial intelligence drives my continuous exploration of cutting-edge AI technologies, including Large Language Models (LLMs) and Generative Adversarial Networks (GANs). My diverse skill set and enthusiasm for innovation make me a dynamic force in the tech world, ready to tackle complex challenges and contribute to the future of AI.
             </p>
         </section>
-        <section id="portfolio">
-            <html>
-
-<head>
-	<title>HTML and CSS Slideshow</title>
-</head>
-
-<body>
-
-	<!-- Define the slideshow container -->
-	<div id="slideshow">
-		<div class="slide-wrapper">
-
-			<!-- Define each of the slides
-		and write the content -->
-
-			<div class="slide">
-				<h1 class="slide-number">
-					Collaborated with peers to develop a Java-based Jetpack Joyride game, showcasing my skills in custom sound effects creation and dynamic animations.
-				</h1>
-			</div>
-			<div class="slide">
-				<h1 class="slide-number">
-                    Skillfully leveraging Python programming and deep cybersecurity expertise, I meticulously designed an advanced ARP packet sniffer. This powerful tool enabled me to meticulously capture and analyze Address Resolution Protocol (ARP) packets on the network, facilitating the creation of a detailed inventory of connected devices.
-				</h1>
-			</div>
-			<div class="slide">
-				<h1 class="slide-number">
-					Engineered a sophisticated database server using C sockets to establish seamless client connections, facilitating bi-directional message exchange.
-				</h1>
-			</div>
-		</div>
-	</div>
-</body>
-
-</html>
-
         <section id="contact">
             <h2>~ Keep in Touch ~</h2>
             <!-- Button to send a message -->
@@ -80,36 +43,83 @@
         <p>Copyright © 2023 Rishi Ramesh — All Rights Reserved</p>
     </footer>
 
-    <!-- Include jQuery and JavaScript for handling the button click -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
-        $(document).ready(function() {
-            $('#send-message-btn').click(function() {
-                // Open a prompt to collect user's message
-                var message = prompt('Please enter your message:');
+        document.addEventListener("DOMContentLoaded", function () {
+            let slideIndex = 0;
+            const slides = document.querySelectorAll(".slide");
+            const totalSlides = slides.length;
 
-                // Check if the user entered a message
-                if (message) {
-                    // Use Formspree to send email (replace with your Formspree endpoint)
-                    var formUrl = 'https://formspree.io/f/mwpepvor';
-                    var data = {
-                        message: message
-                    };
-
-                    $.ajax({
-                        type: 'POST',
-                        url: formUrl,
-                        data: data,
-                        dataType: 'json'
-                    })
-                    .done(function(response) {
-                        alert('Message sent successfully!');
-                    })
-                    .fail(function(error) {
-                        alert('Oops! Something went wrong. Please try again later.');
-                    });
+            function showSlide(index) {
+                const slideWrapper = document.querySelector(".slide-wrapper");
+                if (index >= totalSlides) {
+                    slideIndex = 0;
+                } else if (index < 0) {
+                    slideIndex = totalSlides - 1;
+                } else {
+                    slideIndex = index;
                 }
+                slideWrapper.style.transform = `translateX(${-728 * slideIndex}px)`;
+            }
+
+            window.changeSlide = function (n) {
+                showSlide(slideIndex + n);
+            };
+
+            document.querySelector('.prev').addEventListener('click', function () {
+                changeSlide(-1);
             });
+
+            document.querySelector('.next').addEventListener('click', function () {
+                changeSlide(1);
+            });
+
+            // Optional: Auto slide every 5 seconds
+            setInterval(function () {
+                showSlide(slideIndex + 1);
+            }, 5000);
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener("click", function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute("href")).scrollIntoView({
+                        behavior: "smooth"
+                    });
+                });
+            });
+
+            // Function to show and hide popup
+            window.showPopup = function (show) {
+                document.getElementById('popup').style.visibility = show ? 'visible' : 'hidden';
+            };
+        });
+
+        // Assuming you have jQuery included, if not, you can use vanilla JavaScript
+        $('#send-message-btn').click(function() {
+            // Open a prompt to collect user's message
+            var message = prompt('Please enter your message:');
+
+            // Check if the user entered a message
+            if (message) {
+                // Use Formspree to send email (replace with your Formspree endpoint)
+                var formUrl = 'https://formspree.io/f/mwpepvor';
+                var data = {
+                    message: message
+                };
+
+                $.ajax({
+                    type: 'POST',
+                    url: formUrl,
+                    data: data,
+                    dataType: 'json'
+                })
+                .done(function(response) {
+                    alert('Message sent successfully!');
+                })
+                .fail(function(error) {
+                    alert('Oops! Something went wrong. Please try again later.');
+                });
+            }
         });
     </script>
 </body>
