@@ -1,3 +1,4 @@
+
 document.addEventListener("DOMContentLoaded", function () {
   // Smooth scrolling for navigation links
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -49,4 +50,3 @@ $('#send-message-btn').click(function() {
         alert('Oops! Something went wrong. Please try again later.');
     });
 });
-
