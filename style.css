@@ -83,7 +83,7 @@ nav ul li a {
 }
 
 #about h2, #contact h2 {
-    color: white; /* Changed header text color to white */
+    color: var(--primary-color); /* Changed header text color to primary color */
 }
 
 .profile-photo {
@@ -98,75 +98,6 @@ nav ul li a {
     border-radius: 0.5%;
     text-align: center;
     margin-bottom: 10px;
-}
-
-body {
-	font-family: Helvetica, sans-serif;
-	padding: 5%;
-	text-align: center;
-	font-size: 50;
-}
-
-/* Styling the area of the slides */
-#slideshow {
-	overflow: hidden;
-	height: 510px;
-	width: 728px;
-	margin: 0 auto;
-}
-
-/* Style each of the sides 
-with a fixed width and height */
-.slide {
-	float: left;
-	height: 510px;
-	width: 728px;
-}
-
-/* Add animation to the slides */
-.slide-wrapper {
-
-	/* Calculate the total width on the
-	basis of number of slides */
-	width: calc(728px * 4);
-
-	/* Specify the animation with the
-	duration and speed */
-	animation: slide 15s ease infinite;
-}
-
-/* Set the background color
-of each of the slides */
-.slide:nth-child(1) {
-	background: green;
-}
-
-.slide:nth-child(2) {
-	background: pink;
-}
-
-.slide:nth-child(3) {
-	background: red;
-}
-
-/* Define the animation 
-for the slideshow */
-@keyframes slide {
-
-	/* Calculate the margin-left for 
-	each of the slides */
-	20% {
-		margin-left: 0px;
-	}
-
-	40% {
-		margin-left: calc(-728px * 1);
-	}
-
-	60% {
-		margin-left: calc(-728px * 2);
-	}
-
 }
 
 
@@ -190,7 +121,6 @@ for the slideshow */
     height: auto; /* Maintains aspect ratio */
     border-radius: 8px; /* Optional: Adds rounded corners */
 }
-
 
 #contact {
     background-color: #1e40af; /* Dark Blue */
@@ -238,5 +168,19 @@ a:hover {
     .profile-photo {
         width: 50%;
         margin: 0 auto;
+    }
+
+    #slideshow {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide {
+        width: 100%;
+        height: auto;
+    }
+
+    .slide-wrapper {
+        width: 300%;
     }
 }
